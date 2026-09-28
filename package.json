@@ -1,0 +1,22 @@
+{
+  "name": "my-driver",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@my-driver/shared && npm run build --workspace=@my-driver/api",
+    "dev:api": "npm run dev --workspace=@my-driver/api",
+    "dev:mobile": "npm run start --workspace=@my-driver/mobile",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
